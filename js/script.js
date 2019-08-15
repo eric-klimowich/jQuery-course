@@ -42,13 +42,37 @@ $(function() {
 
 
   // 12. Moving Elements
-  $(".blue-box").animate({
-    // "margin-left": "200px"
-    "margin-left": "+=200px"
-  }, 1000, "linear")
+  // $(".blue-box").animate({
+  //   // "margin-left": "200px"
+  //   "margin-left": "+=200px"
+  // }, 1000, "linear")
+  //
+  // $(".blue-box").animate({
+  //   "margin-left": "-=200px"
+  // }, 2000, "linear")
 
+
+  // 13. Get Creative: Custom Animations!
+  // $(".blue-box").animate({
+  //   "margin-left": "+=200px",
+  //   "opacity": "0",
+  //   "height": "50px",
+  //   "width": "50px",
+  //   "margin-top": "25px"
+  // }, 1000)
+
+  // Can also be done without using strings for keys, must remove "-" and capitalize letters immediately after
   $(".blue-box").animate({
-    "margin-left": "-=200px"
-  }, 2000, "linear")
+    marginLeft: "+=200px",
+    opacity: "0",
+    height: "50px",
+    width: "50px",
+    marginTop: "25px"
+  }, 1000)
+
+  $("p").animate({
+    fontSize: "20px"
+  }, 1000)
+  // Can't use colors during animations. jQuery won't know how to change colors.
 
 });
