@@ -62,17 +62,26 @@ $(function() {
   // }, 1000)
 
   // Can also be done without using strings for keys, must remove "-" and capitalize letters immediately after
-  $(".blue-box").animate({
-    marginLeft: "+=200px",
-    opacity: "0",
-    height: "50px",
-    width: "50px",
-    marginTop: "25px"
-  }, 1000)
-
-  $("p").animate({
-    fontSize: "20px"
-  }, 1000)
+  // $(".blue-box").animate({
+  //   marginLeft: "+=200px",
+  //   opacity: "0",
+  //   height: "50px",
+  //   width: "50px",
+  //   marginTop: "25px"
+  // }, 1000)
+  //
+  // $("p").animate({
+  //   fontSize: "20px"
+  // }, 1000)
   // Can't use colors during animations. jQuery won't know how to change colors.
 
+
+  // 14. Delaying and Chaining Animations
+  // $(".red-box").fadeTo(1000, 0.2)
+  // $(".green-box").delay(1000).fadeTo(1000, 0.5)
+  // $(".blue-box").delay(2000).fadeTo(1000, 0.8)
+
+  $(".red-box").fadeTo(1000, 0.2)
+  $(".green-box").delay(1000).fadeTo(1000, 0.5)
+  $(".blue-box").delay(2000).fadeTo(1000, 0.8).fadeOut().delay(500).fadeIn()
 });
