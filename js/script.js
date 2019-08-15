@@ -32,4 +32,12 @@ $(function() {
   // $(".blue-box").hide(1000)
   // $(".blue-box").show(1000)
 
+
+  // 11. Sliding Elements Up and Down
+  // $(".blue-box").slideUp(2000)
+  // $(".blue-box").slideDown(2000)
+  $(".blue-box").slideToggle(2000)
+  $("p").hide()
+  $("p").slideDown(1000)
+
 });
