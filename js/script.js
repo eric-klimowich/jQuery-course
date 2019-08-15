@@ -121,7 +121,19 @@ $(function() {
   // $("li:even").css("background-color", "rgba(180, 180, 30, 0.8)")
   // $("li:odd").css("background-color", "rgba(180, 180, 30, 0.8)")
 
-  $("input:text").css("background-color", "rgba(180, 180, 30, 0.8)")
+  // $("input:text").css("background-color", "rgba(180, 180, 30, 0.8)")
   // Doesn't exist for "input:email"
   // Can do for "password", "checkbox", "radio", as well as "checked" and "selected" from <select> tags.
+
+
+  // 18. jQuery Methods For Traversal
+  // $("#list").find("li").css("background-color", "rgba(180, 180, 30, 0.8)")
+  // $("#list").children("li").css("background-color", "rgba(180, 180, 30, 0.8)")
+  // $("#list").parents("div").css("background-color", "rgba(180, 180, 30, 0.8)")
+  // $("#list").parents("body").css("background-color", "rgba(180, 180, 30, 0.8)")
+  // $("#list").parent().css("background-color", "rgba(180, 180, 30, 0.8)")
+  // $("#list").siblings().css("background-color", "rgba(180, 180, 30, 0.8)")
+  // $("#list").prev().css("background-color", "rgba(180, 180, 30, 0.8)")
+  // $("#list").next().css("background-color", "rgba(180, 180, 30, 0.8)")
+  $("#list").prev().next().css("background-color", "rgba(180, 180, 30, 0.8)")
 });
