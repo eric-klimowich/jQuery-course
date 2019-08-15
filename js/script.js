@@ -24,4 +24,12 @@ $(function() {
   // $(".green-box").fadeTo(1000, 0.5)
   // When using fadeOut, it sets display to none, so there is a pitfall when trying to fadeTo the box back, now that it's display is set to none. Display would also have to be set again to block, or whatever setting is needed.
 
+
+  // 10. Showing and Hiding Elements
+  // $(".blue-box").hide()
+  // $(".blue-box").show()
+  // $(".blue-box").toggle()
+  // $(".blue-box").hide(1000)
+  // $(".blue-box").show(1000)
+
 });
