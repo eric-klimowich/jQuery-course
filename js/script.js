@@ -155,7 +155,40 @@ $(function() {
 
   // $("li").not(":first").css("background-color", "rgba(180, 180, 30, 0.8)")
   // $("li").not("#list ul li").css("background-color", "rgba(180, 180, 30, 0.8)")
-  $("li").not(function(index) {
-    return index % 3 === 2
-  }).css("background-color", "rgba(180, 180, 30, 0.8)")
+  // $("li").not(function(index) {
+  //   return index % 3 === 2
+  // }).css("background-color", "rgba(180, 180, 30, 0.8)")
+
+
+
+  // Section 4: Section 4: Manipulating the DOM I – Inserting, Replacing and Removing Elements
+
+  // 21. Adding New Elements to the DOM
+
+  // $("ul ul:first").append("<li>I'm gonna be the last sub-item</li>")
+  // or
+  // $("<li>I'm gonna be the last sub-item</li>").appendTo($("ul ul:first"))
+
+  // $("ul ul:first").prepend("<li>I'm gonna be the first sub-item</li>")
+  // or
+  // $("<li>I'm gonna be the first sub-item</li>").prependTo("ul ul:first")
+
+  $("<h4>Eric Klimowich</h4>").prependTo("#content")
+
+  // $(".red-box").after("<div class='red-box'>Another Red</div>")
+  // or
+  // $("<div class='red-box'>Another Red</div>").insertAfter(".red-box")
+
+  // $(".blue-box").before("<div class='blue-box'>Another Blue</div>")
+  //or
+  // $("<div class='blue-box'>Another Blue</div>").insertBefore(".blue-box")
+  // or
+  // $(".blue-box").before(function() {
+  //   return "<div class='blue-box'>Blue 2</div>"
+  // })
+
+  $(".blue-box").before($(".red-box"))
+  // This function does not clone the red box, it actually moves the element to where you want it inserted.
+
+  $("p").after($("#list"))
 });
