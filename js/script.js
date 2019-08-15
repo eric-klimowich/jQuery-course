@@ -36,8 +36,19 @@ $(function() {
   // 11. Sliding Elements Up and Down
   // $(".blue-box").slideUp(2000)
   // $(".blue-box").slideDown(2000)
-  $(".blue-box").slideToggle(2000)
-  $("p").hide()
-  $("p").slideDown(1000)
+  // $(".blue-box").slideToggle(2000)
+  // $("p").hide()
+  // $("p").slideDown(1000)
+
+
+  // 12. Moving Elements
+  $(".blue-box").animate({
+    // "margin-left": "200px"
+    "margin-left": "+=200px"
+  }, 1000, "linear")
+
+  $(".blue-box").animate({
+    "margin-left": "-=200px"
+  }, 2000, "linear")
 
 });
