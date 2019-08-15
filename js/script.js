@@ -15,7 +15,13 @@ $(function() {
   // $(".green-box").fadeTo(2000, 0.5)
   // $(".blue-box").fadeTo(1000, 0.8)
   //
-  $(".blue-box").fadeToggle()
-  $(".blue-box").fadeToggle()
+  // $(".blue-box").fadeToggle()
+  // $(".blue-box").fadeToggle()
+
+
+  // 9. A Pitfall With fadeIn/fadeOut vs. fadeTo
+  // $(".green-box").fadeOut(1000)
+  // $(".green-box").fadeTo(1000, 0.5)
+  // When using fadeOut, it sets display to none, so there is a pitfall when trying to fadeTo the box back, now that it's display is set to none. Display would also have to be set again to block, or whatever setting is needed.
 
 });
