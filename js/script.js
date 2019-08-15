@@ -4,6 +4,8 @@ $(function() {
   // Uncomment this line to fade out the red box on page load
   // $(".red-box").fadeOut(2000);
 
+
+
   // Section 2: Effects - Animations
 
   // 8. Fading In Elements (and Fading Them Out Again)
@@ -91,12 +93,16 @@ $(function() {
   //   alert("This is the callback: Animation Finished!")
   // })
 
-  $(".red-box").fadeTo(1000, 0, function() {
-    $(".green-box").fadeTo(1000, 0, function() {
-      $(".blue-box").fadeTo(1000, 0)
-    })
-  })
+  // $(".red-box").fadeTo(1000, 0, function() {
+  //   $(".green-box").fadeTo(1000, 0, function() {
+  //     $(".blue-box").fadeTo(1000, 0)
+  //   })
+  // })
   // A callback function can be used as the final parameter in any of the jQuery animation functions we have used.
 
   // Also, callbacks are used when you want your animation to finish completely before the next action. If you wanted the second box to start fading a half a second after the first started, you would have to use the delay function.
+
+
+  // 16. Coding Activity: Creating a Signup Lightbox!
+  $(".lightbox").delay(500).fadeIn(1000)
 });
