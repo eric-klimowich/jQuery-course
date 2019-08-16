@@ -307,19 +307,48 @@ $(function() {
 
 
   // 28. Changing the Data of an Element
-  var gallery = $(".gallery")
-  var images = [
-    "images/laptop-mobile_small.jpg",
-    "images/laptop-on-table_small.jpg",
-    "images/people-office-group-team_small.jpg"
-  ]
-  gallery.data("availableImages", images)
-  console.log(gallery.data("availableImages"))
-  gallery.data("name", "The Awesome Gallery")
-  console.log(gallery.data())
-  gallery.removeData("name")
-  console.log(gallery.data())
+  // var gallery = $(".gallery")
+  // var images = [
+  //   "images/laptop-mobile_small.jpg",
+  //   "images/laptop-on-table_small.jpg",
+  //   "images/people-office-group-team_small.jpg"
+  // ]
+  // gallery.data("availableImages", images)
+  // console.log(gallery.data("availableImages"))
+  // gallery.data("name", "The Awesome Gallery")
+  // console.log(gallery.data())
+  // gallery.removeData("name")
+  // console.log(gallery.data())
+  //
+  // var firstPar = $("p:first")
+  // console.log(firstPar.data("mydata"))
 
-  var firstPar = $("p:first")
-  console.log(firstPar.data("mydata"))
+
+  // 29. Retrieving and Changing the Content of an Element
+  // text(), html()
+  // var firstPar = $("p:first")
+  // console.log(firstPar.text())
+  // console.log(firstPar.html())
+  // console.log($("p").html())  // If you select multiple elements, it will only select the first.
+
+  // firstPar.text("<strong>Hello</strong>World!")
+  // firstPar.html("<strong>Hello</strong> World!")
+
+  // firstPar.text(firstPar.text() + " This was appended.")
+  // firstPar.html(firstPar.html() + " This was appended.")
+
+
+
+  // Section 6: Events I ‒ Handling Mouse Events & Keyboard Events
+
+  // 31. Adding Click Handlers
+  $("#btn-click").click(function(event) {
+    console.log(event)
+    alert("Button was clicked")
+  })
+
+  $(".red-box").click(function() {
+    $(this).fadeTo(1000, 0.5)
+  })
+  $(".red-box").click()  // Use to automatically trigger your click event if you need to.
 });
