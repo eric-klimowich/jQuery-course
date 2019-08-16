@@ -270,20 +270,38 @@ $(function() {
   // 26. Changing the CSS Properties of Elements
   $(".gallery").css("display", "none")  // .hide()
 
-  var redBox = $(".red-box")
-  console.log(redBox.css("width"))
-  console.log(redBox.width())
+  // var redBox = $(".red-box")
+  // console.log(redBox.css("width"))
+  // console.log(redBox.width())
 
-  redBox.css("background-color", "#AA7700")
-  $("p").css("font-size", "18px")
-  redBox.css("width", "+=20px")
+  // redBox.css("background-color", "#AA7700")
+  // $("p").css("font-size", "18px")
+  // redBox.css("width", "+=20px")
 
-  var properties = $("p").css(["font-size", "line-height", "color"])
-  console.log(properties)
-  console.log(properties["line-height"])
+  // var properties = $("p").css(["font-size", "line-height", "color"])
+  // console.log(properties)
+  // console.log(properties["line-height"])
 
   // redBox.css("user-select", "none")
-  redBox.css("user-select", function() {
-    return "none"
-  })
+  // redBox.css("user-select", function() {
+  //   return "none"
+  // })
+
+
+  // 27. Adding or Removing CSS Classes
+  // $("a").addClass("fancy-link")  // class"...""
+  // $("p:first").addClass("large emphasize")
+  //
+  // $("li li").addClass(function(index) {
+  //   $(this).addClass("item-" + (index + 1))
+  // })
+  //
+  // $("div").addClass(function(index, currentClass) {
+  //   if (currentClass === "dummy") {
+  //     return "red-box"
+  //   }
+  // })
+
+  // $(".red-box").removeClass("red-box").addClass("blue-box")
+  $(".dummy").removeClass("dummy").addClass("green-box")
 });
