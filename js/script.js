@@ -173,7 +173,7 @@ $(function() {
   // or
   // $("<li>I'm gonna be the first sub-item</li>").prependTo("ul ul:first")
 
-  $("<h4>Eric Klimowich</h4>").prependTo("#content")
+  // $("<h4>Eric Klimowich</h4>").prependTo("#content")
 
   // $(".red-box").after("<div class='red-box'>Another Red</div>")
   // or
@@ -187,9 +187,28 @@ $(function() {
   //   return "<div class='blue-box'>Blue 2</div>"
   // })
 
-  $(".blue-box").before($(".red-box"))
+  // $(".blue-box").before($(".red-box"))
   // This function does not clone the red box, it actually moves the element to where you want it inserted.
 
-  $("p").after($("#list"))
+  // $("p").after($("#list"))
   // This one will clone the element as there are multiple <p> tags in our HTML example.
+
+
+  // 22. Replace Elements and Content
+
+  // $("li").replaceWith("<li>Replaced.</li>")
+  // $("li").replaceWith(function() {
+  //   return "<li>Replaced with function.</li>"
+  // })
+
+  // var firstListItem = $("li:first")
+  // $("p:first").replaceWith(firstListItem)
+  // $("p").replaceWith(firstListItem)
+
+  var greenBox = $(".green-box")
+  // $(".red-box, .blue-box").replaceWith(greenBox) // mine
+  // $(".red-box, .blue-box").replaceWith("<div class='green-box'>More green</div>") // example
+  
+  $("<div class='green-box'>More green</div>").replaceAll(".red-box, .blue-box")
+
 });
