@@ -164,7 +164,6 @@ $(function() {
   // Section 4: Section 4: Manipulating the DOM I – Inserting, Replacing and Removing Elements
 
   // 21. Adding New Elements to the DOM
-
   // $("ul ul:first").append("<li>I'm gonna be the last sub-item</li>")
   // or
   // $("<li>I'm gonna be the last sub-item</li>").appendTo($("ul ul:first"))
@@ -195,7 +194,6 @@ $(function() {
 
 
   // 22. Replace Elements and Content
-
   // $("li").replaceWith("<li>Replaced.</li>")
   // $("li").replaceWith(function() {
   //   return "<li>Replaced with function.</li>"
@@ -228,7 +226,6 @@ $(function() {
 
 
   // 24. Manipulating Attributes and Properties
-
   // attr(), prop(), val()
   // var specialLink = $("#special-link")
   // console.log(specialLink.attr("href"))
@@ -249,21 +246,44 @@ $(function() {
 
 
   // 25. Creating an Image Slideshow
+  // var galleryImage = $(".gallery").find("img").first()
+  // var images = [
+  //   "images/laptop-mobile_small.jpg",
+  //   "images/laptop-on-table_small.jpg",
+  //   "images/people-office-group-team_small.jpg"
+  // ]
+  //
+  // var i = 0
+  // setInterval(function() {
+  //   i = (i + 1) % images.length
+  //   galleryImage.fadeOut(function() {
+  //     $(this).attr("src", images[i])
+  //     $(this).fadeIn()
+  //   })
+  //   console.log(galleryImage.attr("src"))
+  // }, 2000)
 
-  var galleryImage = $(".gallery").find("img").first()
-  var images = [
-    "images/laptop-mobile_small.jpg",
-    "images/laptop-on-table_small.jpg",
-    "images/people-office-group-team_small.jpg"
-  ]
 
-  var i = 0
-  setInterval(function() {
-    i = (i + 1) % images.length
-    galleryImage.fadeOut(function() {
-      $(this).attr("src", images[i])
-      $(this).fadeIn()
-    })
-    console.log(galleryImage.attr("src"))
-  }, 2000)
+
+  // Section 5: Manipulating the DOM II – Changing Element Data and CSS
+
+  // 26. Changing the CSS Properties of Elements
+  $(".gallery").css("display", "none")  // .hide()
+
+  var redBox = $(".red-box")
+  console.log(redBox.css("width"))
+  console.log(redBox.width())
+
+  redBox.css("background-color", "#AA7700")
+  $("p").css("font-size", "18px")
+  redBox.css("width", "+=20px")
+
+  var properties = $("p").css(["font-size", "line-height", "color"])
+  console.log(properties)
+  console.log(properties["line-height"])
+
+  // redBox.css("user-select", "none")
+  redBox.css("user-select", function() {
+    return "none"
+  })
 });
