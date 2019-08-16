@@ -268,7 +268,7 @@ $(function() {
   // Section 5: Manipulating the DOM II – Changing Element Data and CSS
 
   // 26. Changing the CSS Properties of Elements
-  $(".gallery").css("display", "none")  // .hide()
+  // $(".gallery").css("display", "none")  // .hide()
 
   // var redBox = $(".red-box")
   // console.log(redBox.css("width"))
@@ -303,5 +303,23 @@ $(function() {
   // })
 
   // $(".red-box").removeClass("red-box").addClass("blue-box")
-  $(".dummy").removeClass("dummy").addClass("green-box")
+  // $(".dummy").removeClass("dummy").addClass("green-box")
+
+
+  // 28. Changing the Data of an Element
+  var gallery = $(".gallery")
+  var images = [
+    "images/laptop-mobile_small.jpg",
+    "images/laptop-on-table_small.jpg",
+    "images/people-office-group-team_small.jpg"
+  ]
+  gallery.data("availableImages", images)
+  console.log(gallery.data("availableImages"))
+  gallery.data("name", "The Awesome Gallery")
+  console.log(gallery.data())
+  gallery.removeData("name")
+  console.log(gallery.data())
+
+  var firstPar = $("p:first")
+  console.log(firstPar.data("mydata"))
 });
