@@ -224,5 +224,26 @@ $(function() {
   // $("#content").append(detachedListItem)
 
   // $("p:first").empty()  // Empties all content, including children, but keeps element.
-  $(".red-box, .green-box, .blue-box").empty()  // Empties all content, including children, but keeps element.
+  // $(".red-box, .green-box, .blue-box").empty()  // Empties all content, including children, but keeps element.
+
+
+  // 24. Manipulating Attributes and Properties
+
+  // attr(), prop(), val()
+  // var specialLink = $("#special-link")
+  // console.log(specialLink.attr("href"))
+  // console.log(specialLink.attr("title"))
+  //
+  // specialLink.attr(specialLink.attr("href", "http://ericklimowich.herokuapp.com"))
+
+  // var checkbox = $("input:checkbox")
+  // console.log(checkbox.prop("checked"))
+  // console.log(checkbox.attr("checked"))  // Only shows "checked".
+
+  var textInput = $("input:text")
+  textInput.val("Eric Klimowich")
+  console.log(textInput.val())
+
+  var rangeInput = $("input[type='range']")
+  console.log(rangeInput.val())
 });
