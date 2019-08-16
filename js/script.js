@@ -191,4 +191,5 @@ $(function() {
   // This function does not clone the red box, it actually moves the element to where you want it inserted.
 
   $("p").after($("#list"))
+  // This one will clone the element as there are multiple <p> tags in our HTML example.
 });
