@@ -205,10 +205,24 @@ $(function() {
   // $("p:first").replaceWith(firstListItem)
   // $("p").replaceWith(firstListItem)
 
-  var greenBox = $(".green-box")
+  // var greenBox = $(".green-box")
   // $(".red-box, .blue-box").replaceWith(greenBox) // mine
   // $(".red-box, .blue-box").replaceWith("<div class='green-box'>More green</div>") // example
-  
-  $("<div class='green-box'>More green</div>").replaceAll(".red-box, .blue-box")
 
+  // $("<div class='green-box'>More green</div>").replaceAll(".red-box, .blue-box")
+
+
+  // 23. Removing Elements and Content
+  // $("li").remove()
+  // $("form").children().not("input:text, textarea, br").remove()
+
+  // var detachedListItem = $("li").detach()
+  // $("#content").append(detachedListItem)
+  // Can also do the same with removed, however, if using remove and reattaching in the method below, any event handlers or data associated with the removed item will be lost.
+  // Not the case when using detach.
+  // var removedListItem = $("li")  // All data and event handlers will be lost.
+  // $("#content").append(detachedListItem)
+
+  // $("p:first").empty()  // Empties all content, including children, but keeps element.
+  $(".red-box, .green-box, .blue-box").empty()  // Empties all content, including children, but keeps element.
 });
