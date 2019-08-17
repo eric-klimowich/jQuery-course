@@ -541,13 +541,75 @@ $(function() {
 
 
   // 42. Handling the Submit Event
+  // $("#form").submit(function(event) {
+  //   var textarea = $("#message")
+  //   if (textarea.val().trim() === "") {
+  //     textarea.css("box-shadow", "0 0 4px red")
+  //     event.preventDefault()
+  //   } else {
+  //     // form will be submitted
+  //   }
+  // })
+
+
+  // 43. Complete Form Validation on Submit
   $("#form").submit(function(event) {
-    var textarea = $("#message")
-    if (textarea.val().trim() === "") {
-      textarea.css("box-shadow", "0 0 4px red")
+    var name = $("#name").val()
+    var password = $("#password").val()
+    var message = $("#message").val()
+    var isChecked = $("#checkbox").is(":checked")
+
+    validateNameField(name, event)
+    validatePasswordField(password, event)
+    validateMessageField(message, event)
+    validateCheckboxField(isChecked, event)
+  })
+
+  function validateNameField(name, event) {
+    if (!isValidName(name)) {
+      $("#name-feedback").text("Please enter at least 2 characters.")
       event.preventDefault()
     } else {
-      // form will be submitted
+      $("#name-feedback").text("")
     }
-  })
+  }
+
+  function isValidName(name) {
+    return name.length >= 2
+  }
+
+  function validatePasswordField(password, event) {
+    if (!isValidPassword(password)) {
+      $("#password-feedback").text("The password should have at least 6 characters and contain a number.")
+      event.preventDefault()
+    } else {
+      $("#password-feedback").text("")
+    }
+  }
+
+  function isValidPassword(password) {
+    return password.length >= 6 && /.*[0-9].*/.test(password)
+  }
+
+  function validateMessageField(message, event) {
+    if (!isValidMessage(message)) {
+      $("#message-feedback").text("Please enter a message.")
+      event.preventDefault()
+    } else {
+      $("#message-feedback").text("")
+    }
+  }
+
+  function isValidMessage(message) {
+    return message.trim() !== ""
+  }
+
+  function validateCheckboxField(isChecked, event) {
+    if (!isChecked) {
+      $("#checkbox-feedback").text("Please agree to this.")
+      event.preventDefault()
+    } else {
+      $("#checkbox-feedback").text("")
+    }
+  }
 });
