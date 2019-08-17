@@ -342,13 +342,42 @@ $(function() {
   // Section 6: Events I ‒ Handling Mouse Events & Keyboard Events
 
   // 31. Adding Click Handlers
-  $("#btn-click").click(function(event) {
-    console.log(event)
-    alert("Button was clicked")
-  })
+  // $("#btn-click").click(function(event) {
+  //   console.log(event)
+  //   alert("Button was clicked")
+  // })
+  //
+  // $(".red-box").click(function() {
+  //   $(this).fadeTo(1000, 0.5)
+  // })
+  // $(".red-box").click()  // Use to automatically trigger your click event if you need to.
 
-  $(".red-box").click(function() {
-    $(this).fadeTo(1000, 0.5)
+
+  // 32. Adding Hover Handlers
+  // :hover
+  // $("#btn-hover").hover(function() {
+  //   alert("Button was hovered.")
+  // })
+  //
+  // $(".green-box").hover(function() {
+  //   $(this).text("I was hovered")
+  // })
+
+
+  // 33. Adding MouseEnter & MouseLeave Handlers
+  var blueBox = $(".blue-box")
+  // blueBox.mouseenter(function() {
+  //   $(this).stop().fadeTo(500, 0.7)
+  // })
+  // blueBox.mouseleave(function() {
+  //   $(this).stop().fadeTo(500, 1)
+  // })
+
+  // hover(handlerIn, handlerOut)
+  blueBox.hover(function() {
+    $(this).stop().fadeTo(500, 0.7)
+  }, function() {
+    $(this).stop().fadeTo(500, 1)
   })
-  $(".red-box").click()  // Use to automatically trigger your click event if you need to.
+  // Preferred method.
 });
