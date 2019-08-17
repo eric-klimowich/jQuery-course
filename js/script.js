@@ -437,12 +437,27 @@ $(function() {
   // $("#content").append("<p>This is a dynamically added paragraph.</div>")
 
   // Delegated events
-  $("#content").on("click", "p", function() {
-    $(this).slideUp()
-  })
-  $("#content").append("<p>This is a dynamically added paragraph.</div>")
+  // $("#content").on("click", "p", function() {
+  //   $(this).slideUp()
+  // })
+  // $("#content").append("<p>This is a dynamically added paragraph.</div>")
+  //
+  // $("body").on("mouseenter", "li", function() {
+  //   $(this).css("color", "red")
+  // })
 
-  $("body").on("mouseenter", "li", function() {
-    $(this).css("color", "red")
+
+  // 37. Passing Additional Data to Events
+  $("#btn-click").click({
+    user: "Eric",
+    domain: "ericklimowich.herokuapp.com"
+  }, function(event) {
+    greetUser(event.data)
   })
+
+  function greetUser(userData) {
+    username = userData.user || "Anonymous"
+    userDomain = userData.domain || "example.com"
+    alert(`Welcome back, ${username} from ${userDomain}!`)
+  }
 });
