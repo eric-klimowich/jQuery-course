@@ -505,21 +505,37 @@ $(function() {
   // Section 7: Events II ‒ Forms
 
   // 40. The Focus & Blur Events
-  var inputFields = $("input:text, input:password, textarea")
-  inputFields.focus(function() {
-    $(this).css("box-shadow", "0 0 4px gray")
-  })
+  // var inputFields = $("input:text, input:password, textarea")
+  // inputFields.focus(function() {
+  //   $(this).css("box-shadow", "0 0 4px gray")
+  // })
+  //
+  // inputFields.blur(function() {
+  //   $(this).css("box-shadow", "none")
+  // })
+  //
+  // $("#name").blur(function() {
+  //   var text = $(this).val()
+  //   if (text.length < 3) {
+  //     $(this).css("box-shadow", "0 0 4px red")
+  //   } else {
+  //     $(this).css("box-shadow", "0 0 4px green")
+  //   }
+  // })
 
-  inputFields.blur(function() {
-    $(this).css("box-shadow", "none")
-  })
 
-  $("#name").blur(function() {
-    var text = $(this).val()
-    if (text.length < 3) {
-      $(this).css("box-shadow", "0 0 4px red")
+  // 41. Using the Change Event
+  $("#checkbox").change(function() {
+    var isChecked = $(this).is(":checked")  // .prop("checked")
+    if (isChecked) {
+      $(this).add("label[for='cb']").css("box-shadow", "0 0 4px green")
     } else {
-      $(this).css("box-shadow", "0 0 4px green")
+      $(this).add("label[for='cb']").css("box-shadow", "0 0 4px red")
     }
+  })
+
+  $("#selection").change(function() {
+    var selectedOption = $(this).find(":selected").text()
+    alert(selectedOption)
   })
 });
