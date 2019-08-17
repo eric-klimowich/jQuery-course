@@ -365,7 +365,7 @@ $(function() {
 
 
   // 33. Adding MouseEnter & MouseLeave Handlers
-  var blueBox = $(".blue-box")
+  // var blueBox = $(".blue-box")
   // blueBox.mouseenter(function() {
   //   $(this).stop().fadeTo(500, 0.7)
   // })
@@ -374,10 +374,31 @@ $(function() {
   // })
 
   // hover(handlerIn, handlerOut)
-  blueBox.hover(function() {
-    $(this).stop().fadeTo(500, 0.7)
-  }, function() {
-    $(this).stop().fadeTo(500, 1)
-  })
+  // blueBox.hover(function() {
+  //   $(this).stop().fadeTo(500, 0.7)
+  // }, function() {
+  //   $(this).stop().fadeTo(500, 1)
+  // })
   // Preferred method.
+
+
+  // 34. Adding the Same Handler for Multiple Events
+  // .on()
+  // .on("click", function() { ... })
+  // $("html").on("click keydown", function() {
+  //   console.log("Mouse was clicked or key was pressed.")
+  // })
+
+  var images = [
+    "images/laptop-mobile_small.jpg",
+    "images/laptop-on-table_small.jpg",
+    "images/people-office-group-team_small.jpg"
+  ]
+  var i = 0
+  $(".gallery").find("img").on("click", function() {
+    i = (i + 1) % images.length
+    $(this).fadeOut(function() {
+      $(this).attr("src", images[i]).fadeIn()
+    })
+  })
 });
