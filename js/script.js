@@ -740,10 +740,42 @@ $(function() {
   // $.load()  Specifically designed to retrieve files from your own server.
   // $("#code").load("js/script.js")
 
-  $("#code").load("js/script.js", function(response, status) {
-    if (status == "error") {
-      alert("Could not find file.")
-    }
-    console.log(response)
+  // $("#code").load("js/script.js", function(response, status) {
+  //   if (status == "error") {
+  //     alert("Could not find file.")
+  //   }
+  //   console.log(response)
+  // })
+
+
+  // 47. Retrieving Flickr Images Through the Flickr API (+Understanding JSON)
+  // JSON
+  // {
+  //   key: value,
+  //   key2: value2
+  // }
+
+  // $.getJSON()
+  var flickrApiUrl = "https://www.flickr.com/services/feeds/photos_public.gne?jsoncallback=?"
+  // added "?jsoncallback=?"
+  $.getJSON(flickrApiUrl, {
+    // options....
+    tags: "sun, beach",
+    tagmode: "any",
+    format: "json"
+  }).done(function(data) {
+    // success
+    console.log(data)
+    $.each(data.items, function(index, item) {
+      console.log(item)
+      $("<img>").attr("src", item.media.m).appendTo("#flickr")
+
+      if (index === 4) {
+        return false
+      }
+    })
+  }).fail(function() {
+    // failure
+    alert("Ajax call failed.")
   })
 });
