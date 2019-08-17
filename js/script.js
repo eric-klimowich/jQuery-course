@@ -448,16 +448,39 @@ $(function() {
 
 
   // 37. Passing Additional Data to Events
-  $("#btn-click").click({
-    user: "Eric",
-    domain: "ericklimowich.herokuapp.com"
-  }, function(event) {
-    greetUser(event.data)
+  // $("#btn-click").click({
+  //   user: "Eric",
+  //   domain: "ericklimowich.herokuapp.com"
+  // }, function(event) {
+  //   greetUser(event.data)
+  // })
+  //
+  // function greetUser(userData) {
+  //   username = userData.user || "Anonymous"
+  //   userDomain = userData.domain || "example.com"
+  //   alert(`Welcome back, ${username} from ${userDomain}!`)
+  // }
+
+
+  // 38. Creating an Image Gallery with Lightbox Preview
+  var galleryItems = $(".gallery").find("img")
+  galleryItems.css("width", "32%").css("opacity", "0.7")
+
+  galleryItems.mouseenter(function() {
+    $(this).stop().fadeTo(500, 1)
   })
 
-  function greetUser(userData) {
-    username = userData.user || "Anonymous"
-    userDomain = userData.domain || "example.com"
-    alert(`Welcome back, ${username} from ${userDomain}!`)
-  }
+  galleryItems.mouseleave(function() {
+    $(this).stop().fadeTo(500, 0.7)
+  })
+
+  galleryItems.click(function() {
+    var source = $(this).attr("src")
+    var image = $("<img>").attr("src", source).css("width", "100%")
+    $(".lightbox").empty().append(image).fadeIn(2000)
+  })
+
+  $(".lightbox").click(function() {
+    $(this).stop().fadeOut(2000)
+  })
 });
