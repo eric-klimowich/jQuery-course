@@ -756,26 +756,44 @@ $(function() {
   // }
 
   // $.getJSON()
-  var flickrApiUrl = "https://www.flickr.com/services/feeds/photos_public.gne?jsoncallback=?"
-  // added "?jsoncallback=?"
-  $.getJSON(flickrApiUrl, {
-    // options....
-    tags: "sun, beach",
-    tagmode: "any",
-    format: "json"
-  }).done(function(data) {
-    // success
-    console.log(data)
-    $.each(data.items, function(index, item) {
-      console.log(item)
-      $("<img>").attr("src", item.media.m).appendTo("#flickr")
+  // var flickrApiUrl = "https://www.flickr.com/services/feeds/photos_public.gne?jsoncallback=?"
+  // // added "?jsoncallback=?"
+  // $.getJSON(flickrApiUrl, {
+  //   // options....
+  //   tags: "sun, beach",
+  //   tagmode: "any",
+  //   format: "json"
+  // }).done(function(data) {
+  //   // success
+  //   console.log(data)
+  //   $.each(data.items, function(index, item) {
+  //     console.log(item)
+  //     $("<img>").attr("src", item.media.m).appendTo("#flickr")
+  //
+  //     if (index === 4) {
+  //       return false
+  //     }
+  //   })
+  // }).fail(function() {
+  //   // failure
+  //   alert("Ajax call failed.")
+  // })
 
-      if (index === 4) {
-        return false
-      }
+
+  // 48. Retrieving Pokémon Data from The PokéAPI (Or Star Wars)
+  // $.getJSON()
+  var pokeapiUrl = "https://pokeapi.co/api/v2/generation/1"
+
+  $.getJSON(pokeapiUrl).done(function(data) {
+    console.log(data)
+    $.each(data.pokemon_species, function(index, pokemon) {
+      var name = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)
+      var par = $("<p>").html(`Pokemon species no. ${index + 1} is ${name}.`)
+      par.appendTo("#pokemon")
     })
   }).fail(function() {
-    // failure
-    alert("Ajax call failed.")
+    console.log("Request to Pokeapi failed.")
+  }).always(function() {
+    console.log("Pokemon is awesome!")
   })
 });
