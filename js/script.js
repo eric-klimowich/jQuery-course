@@ -410,23 +410,39 @@ $(function() {
   //
   // $("html").on("click keydown", logEvent)
 
-  var images = [
-    "images/laptop-mobile_small.jpg",
-    "images/laptop-on-table_small.jpg",
-    "images/people-office-group-team_small.jpg"
-  ]
+  // var images = [
+  //   "images/laptop-mobile_small.jpg",
+  //   "images/laptop-on-table_small.jpg",
+  //   "images/people-office-group-team_small.jpg"
+  // ]
+  //
+  // var i = 0
+  //
+  // var galleryImage = $(".gallery").find("img")
+  //
+  // function changeGalleryImage() {
+  //   i = (i + 1) % images.length
+  //   galleryImage.fadeOut(function() {
+  //     galleryImage.attr("src", images[i]).fadeIn()
+  //   })
+  // }
+  //
+  // galleryImage.on("click", changeGalleryImage)
 
-  var i = 0
 
-  var galleryImage = $(".gallery").find("img")
+  // 36. Delegated Events
+  // $("p").click(function() {
+  //   $(this).slideUp()
+  // })
+  // $("#content").append("<p>This is a dynamically added paragraph.</div>")
 
-  function changeGalleryImage() {
-    i = (i + 1) % images.length
-    galleryImage.fadeOut(function() {
-      galleryImage.attr("src", images[i]).fadeIn()
-    })
-  }
+  // Delegated events
+  $("#content").on("click", "p", function() {
+    $(this).slideUp()
+  })
+  $("#content").append("<p>This is a dynamically added paragraph.</div>")
 
-  galleryImage.on("click", changeGalleryImage)
-
+  $("body").on("mouseenter", "li", function() {
+    $(this).css("color", "red")
+  })
 });
