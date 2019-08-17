@@ -389,16 +389,44 @@ $(function() {
   //   console.log("Mouse was clicked or key was pressed.")
   // })
 
+  // var images = [
+  //   "images/laptop-mobile_small.jpg",
+  //   "images/laptop-on-table_small.jpg",
+  //   "images/people-office-group-team_small.jpg"
+  // ]
+  // var i = 0
+  // $(".gallery").find("img").on("click", function() {
+  //   i = (i + 1) % images.length
+  //   $(this).fadeOut(function() {
+  //     $(this).attr("src", images[i]).fadeIn()
+  //   })
+  // })
+
+
+  // 35. Modularizing Event Handlers (No More Inline Functions)
+  // function logEvent() {
+  //   console.log("Mouse was clicked or key was pressed.")
+  // }
+  //
+  // $("html").on("click keydown", logEvent)
+
   var images = [
     "images/laptop-mobile_small.jpg",
     "images/laptop-on-table_small.jpg",
     "images/people-office-group-team_small.jpg"
   ]
+
   var i = 0
-  $(".gallery").find("img").on("click", function() {
+
+  var galleryImage = $(".gallery").find("img")
+
+  function changeGalleryImage() {
     i = (i + 1) % images.length
-    $(this).fadeOut(function() {
-      $(this).attr("src", images[i]).fadeIn()
+    galleryImage.fadeOut(function() {
+      galleryImage.attr("src", images[i]).fadeIn()
     })
-  })
+  }
+
+  galleryImage.on("click", changeGalleryImage)
+
 });
